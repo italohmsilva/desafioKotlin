@@ -3,7 +3,7 @@ package br.digital.com.desafioKotlin
 class Aluno (
         var nome: String,
         var sobrenome: String,
-        var codigoAluno: Int
+        val codigoAluno: Int
 ) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
