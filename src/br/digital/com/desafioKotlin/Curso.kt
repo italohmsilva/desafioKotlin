@@ -2,7 +2,11 @@ package br.digital.com.desafioKotlin
 
 class Curso(
         var nome: String,
-        var codigoCursos: Int
+        var codigoCursos: Int,
+        var profAdjunto: ProfAdjunto,
+        var profTitular: ProfTitular,
+        val qtdeMaximaAlunos: Int,
+        var listaAlunosMatriculados: MutableList<Aluno>
 ) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
