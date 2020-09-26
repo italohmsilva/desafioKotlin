@@ -19,4 +19,16 @@ class Curso(
 
         return true
     }
+
+    fun adicionarUmAluno(umAluno: Aluno): Boolean {
+        return if (listaAlunosMatriculados.size<qtdeMaximaAlunos) {
+            listaAlunosMatriculados.add(umAluno)
+            true
+        } else false
+    }
+
+    fun excluirAluno(umAluno: Aluno){
+        listaAlunosMatriculados.remove(umAluno)
+    }
+
 }
