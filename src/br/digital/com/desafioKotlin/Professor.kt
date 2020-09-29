@@ -18,4 +18,8 @@ open class Professor(
 
         return true
     }
+
+    override fun toString(): String {
+        return "Professor(nome='$nome', sobrenome='$sobrenome', codigoProfessor=$codigoProfessor, tempoDeCasa=$tempoDeCasa)"
+    }
 }

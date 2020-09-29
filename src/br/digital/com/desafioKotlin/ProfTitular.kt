@@ -6,5 +6,9 @@ class ProfTitular(
         codigoProfessor: Int,
         tempoDeCasa: Int,
         var especialidade: String
-) : Professor(nome, sobrenome, codigoProfessor, tempoDeCasa)
+) : Professor(nome, sobrenome, codigoProfessor, tempoDeCasa){
+    override fun toString(): String {
+        return "ProfTitular(especialidade='$especialidade')"
+    }
+}
 

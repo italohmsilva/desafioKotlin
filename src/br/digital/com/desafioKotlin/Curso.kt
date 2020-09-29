@@ -9,7 +9,7 @@ class Curso(
         //var listaAlunosMatriculados: MutableList<Aluno>
 ) {
 
-    var profAdjunto = ProfAdjunto(" ", " ", 0, 0,0)
+    var profAdjunto = ProfAdjunto(" ", " ", 0, 0, 0)
     var profTitular = ProfTitular(" ", " ", 0, 0, "")
     var listaAlunosMatriculados = mutableListOf<Aluno>()
 
@@ -36,4 +36,7 @@ class Curso(
         listaAlunosMatriculados.remove(umAluno)
     }
 
+    override fun toString(): String {
+        return "Curso(nome='$nome', codigoCursos=$codigoCursos, qtdeMaximaAlunos=$qtdeMaximaAlunos, profAdjunto=$profAdjunto, profTitular=$profTitular, listaAlunosMatriculados=$listaAlunosMatriculados)"
+    }
 }

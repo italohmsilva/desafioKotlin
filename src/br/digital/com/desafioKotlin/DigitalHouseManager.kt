@@ -7,6 +7,7 @@ class DigitalHouseManager() {
     var listaCursos = mutableListOf<Curso>()
     var listaMatriculas = mutableListOf<Matricula>()
 
+
     fun registrarCurso(
             nome: String,
             codigoCurso: Int,
@@ -69,9 +70,9 @@ class DigitalHouseManager() {
         when {
             filtroAluno.isEmpty() -> println("Aluno não Registrado")
             filtroCurso.isEmpty() -> println("Curso não Registrado")
-            filtroCurso[0].listaAlunosMatriculados.size >= filtroCurso[0].qtdeMaximaAlunos -> println("Não foi possível realizar a matrícula porque\n" +
-                    "não há vagas.")
+            filtroCurso[0].listaAlunosMatriculados.size >= filtroCurso[0].qtdeMaximaAlunos -> println("Não foi possível realizar a matrícula porque não há vagas.")
             else -> {
+                filtroCurso[0].listaAlunosMatriculados.add(filtroAluno[0])
                 listaMatriculas.add(Matricula(filtroAluno[0], filtroCurso[0]))
                 println("Matricula realizada")
             }
@@ -96,5 +97,9 @@ class DigitalHouseManager() {
                 filtroCurso[0].profAdjunto = filtroProfAdjunto[0]
             }
         }
+    }
+
+    override fun toString(): String {
+        return "DigitalHouseManager(listaAlunos=$listaAlunos, listaProfessorAdjunto=$listaProfessorAdjunto, listaProfessorTitular=$listaProfessorTitular, listaCursos=$listaCursos, listaMatriculas=$listaMatriculas)"
     }
 }

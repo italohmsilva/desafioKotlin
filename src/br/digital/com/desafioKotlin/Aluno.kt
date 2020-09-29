@@ -18,5 +18,7 @@ class Aluno (
         return true
     }
 
-
+    override fun toString(): String {
+        return "Aluno(nome='$nome', sobrenome='$sobrenome', codigoAluno=$codigoAluno)"
+    }
 }
