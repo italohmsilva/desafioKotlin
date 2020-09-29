@@ -3,11 +3,16 @@ package br.digital.com.desafioKotlin
 class Curso(
         var nome: String,
         var codigoCursos: Int,
-        var profAdjunto: ProfAdjunto,
-        var profTitular: ProfTitular,
+        //var profAdjunto: ProfAdjunto,
+        //var profTitular: ProfTitular,
         val qtdeMaximaAlunos: Int,
-        var listaAlunosMatriculados: MutableList<Aluno>
+        //var listaAlunosMatriculados: MutableList<Aluno>
 ) {
+
+    var profAdjunto = ProfAdjunto(" ", " ", 0, 0,0)
+    var profTitular = ProfTitular(" ", " ", 0, 0, "")
+    var listaAlunosMatriculados = mutableListOf<Aluno>()
+
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (other !is Curso) return false
@@ -21,13 +26,13 @@ class Curso(
     }
 
     fun adicionarUmAluno(umAluno: Aluno): Boolean {
-        return if (listaAlunosMatriculados.size<qtdeMaximaAlunos) {
+        return if (listaAlunosMatriculados.size < qtdeMaximaAlunos) {
             listaAlunosMatriculados.add(umAluno)
             true
         } else false
     }
 
-    fun excluirAluno(umAluno: Aluno){
+    fun excluirAluno(umAluno: Aluno) {
         listaAlunosMatriculados.remove(umAluno)
     }
 

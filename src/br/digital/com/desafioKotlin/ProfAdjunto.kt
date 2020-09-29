@@ -3,7 +3,7 @@ package br.digital.com.desafioKotlin
 class ProfAdjunto(
         nome: String,
         sobrenome: String,
+        codigoProfessor: Int,
         tempoDeCasa: Int,
-        codigoProfessor:Int,
         var qtdeHorasMonitoria: Int
-): Professor(nome, sobrenome, tempoDeCasa, codigoProfessor)
+) : Professor(nome, sobrenome, codigoProfessor, tempoDeCasa)
