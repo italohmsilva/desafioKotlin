@@ -11,8 +11,6 @@ class Aluno (
 
         other as Aluno
 
-        //if (nome != other.nome) return false
-        //if (sobrenome != other.sobrenome) return false
         if (codigoAluno != other.codigoAluno) return false
 
         return true

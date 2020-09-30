@@ -17,7 +17,7 @@ class DigitalHouseManager() {
 
     fun excluirCurso(codigoCurso: Int) {
         listaCursos.forEach {
-            if (it.codigoCursos == codigoCurso) {
+            if (it.codigoCurso == codigoCurso) {
                 listaCursos.remove(it)
             }
         }
@@ -64,13 +64,13 @@ class DigitalHouseManager() {
             codigoAluno: Int,
             codigoCurso: Int,
     ) {
-        val filtroCurso = listaCursos.filter { it.codigoCursos == codigoCurso }
+        val filtroCurso = listaCursos.filter { it.codigoCurso == codigoCurso }
         val filtroAluno = listaAlunos.filter { it.codigoAluno == codigoAluno }
 
         when {
             filtroAluno.isEmpty() -> println("Aluno não Registrado")
             filtroCurso.isEmpty() -> println("Curso não Registrado")
-            filtroCurso[0].listaAlunosMatriculados.size >= filtroCurso[0].qtdeMaximaAlunos -> println("Não foi possível realizar a matrícula porque não há vagas.")
+            filtroCurso[0].estaCheio() -> println("Não foi possível realizar a matrícula porque não há vagas.")
             else -> {
                 filtroCurso[0].listaAlunosMatriculados.add(filtroAluno[0])
                 listaMatriculas.add(Matricula(filtroAluno[0], filtroCurso[0]))
@@ -86,7 +86,7 @@ class DigitalHouseManager() {
 
         val filtroProfTitular = listaProfessorTitular.filter { it.codigoProfessor == codigoprofTitular }
         val filtroProfAdjunto = listaProfessorAdjunto.filter { it.codigoProfessor == codigoprofAdjunto }
-        val filtroCurso = listaCursos.filter { it.codigoCursos == codigoCurso }
+        val filtroCurso = listaCursos.filter { it.codigoCurso == codigoCurso }
 
         when {
             filtroProfTitular.isEmpty() -> println("Professor Titular não Registrado")
@@ -95,6 +95,14 @@ class DigitalHouseManager() {
             else -> {
                 filtroCurso[0].profTitular = filtroProfTitular[0]
                 filtroCurso[0].profAdjunto = filtroProfAdjunto[0]
+            }
+        }
+    }
+
+    fun consultarMatriculaAluno(codigoAluno: Int) {
+        listaMatriculas.forEach {
+            if (it.aluno.codigoAluno == codigoAluno) {
+                println("O Aluno ${it.aluno.nome} está matriculado no curso ${it.curso.nome}")
             }
         }
     }

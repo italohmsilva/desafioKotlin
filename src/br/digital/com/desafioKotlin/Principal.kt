@@ -26,4 +26,7 @@ fun main() {
     digitalHouseManager.matricularAluno(20,20002) //Matriculando Aluno no Curso Android
     digitalHouseManager.matricularAluno(30,20002) //Matriculando Aluno no Curso Android
 
+    digitalHouseManager.consultarMatriculaAluno(20)
+
+    var italo: Curso? = null
 }

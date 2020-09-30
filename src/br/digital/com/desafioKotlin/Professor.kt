@@ -12,8 +12,6 @@ open class Professor(
 
         other as Professor
 
-        //if (nome != other.nome) return false
-        //if (sobrenome != other.sobrenome) return false
         if (codigoProfessor != other.codigoProfessor) return false
 
         return true
