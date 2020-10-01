@@ -15,9 +15,9 @@ fun main() {
     digitalHouseManager.alocarProfessores(20001,17,10)
     digitalHouseManager.alocarProfessores(20002,20,13)
 
-    digitalHouseManager.registrarAluno("Italo","Machado", 30)
-    digitalHouseManager.registrarAluno("Yago","Silva", 20)
-    digitalHouseManager.registrarAluno("Nicole","Souza", 10)
+    digitalHouseManager.matricularAluno("Italo","Machado", 30)
+    digitalHouseManager.matricularAluno("Yago","Silva", 20)
+    digitalHouseManager.matricularAluno("Nicole","Souza", 10)
 
     digitalHouseManager.matricularAluno(30,20001) //Matriculando Aluno no Curso Full Stack
     digitalHouseManager.matricularAluno(20,20001) //Matriculando Aluno no Curso Full Stack
